@@ -1,0 +1,19 @@
+package domain
+
+import (
+	"gin-IM/pkg/model"
+	"gin-IM/pkg/request"
+)
+
+type {{.Module}} struct {
+	model.Model
+}
+
+type Page{{.Module}}Search struct {
+	{{.Module}}
+	request.PageSearch
+}
+
+func ({{.Module}}) TableName() string {
+	return "{{.ModuleCamelToSnake}}"
+}
